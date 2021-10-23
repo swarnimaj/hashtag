@@ -26,17 +26,16 @@ const rootComponent = {
     autoComplete: function(){
       if(this.text.startsWith('#')){
         this.updateResults(this.text);
+      }else{
+        this.updateResults(' ');
       }
     },
     setQuery: function(query){
       this.text = query;
     },
-    remove: function(){
-      this.results = [];
-    }
   },
   template: `
-  <div class="center" @click="remove">
+  <div class="center">
     <input type="text" @input="autoComplete" v-model="text" >
     <p v-for="result in results">
     <span @click="setQuery(result)">{{result}}</span>
