@@ -36,6 +36,7 @@ const rootComponent = {
   },
   template: `
   <div class="center">
+    <h3>Hashtag Generator</h3>
     <input type="text" @input="autoComplete" v-model="text" >
     <p v-for="result in results">
     <span @click="setQuery(result)">{{result}}</span>
