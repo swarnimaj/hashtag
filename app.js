@@ -30,11 +30,13 @@ const rootComponent = {
     },
     setQuery: function(query){
       this.text = query;
+    },
+    remove: function(){
+      this.results = [];
     }
-
   },
   template: `
-  <div class="center">
+  <div class="center" @click="remove">
     <input type="text" @input="autoComplete" v-model="text" >
     <p v-for="result in results">
     <span @click="setQuery(result)">{{result}}</span>
